@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  w2021assign2:
+    image: w2021assign2
+    build:
+      context: .
+      dockerfile: ./Dockerfile

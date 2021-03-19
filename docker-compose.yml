@@ -1,0 +1,27 @@
+version: '3.4'
+
+services:
+  w2021assign2:
+    image: "php:8.0-apache"
+    volumes:
+      - ./src:/var/www/html/
+    restart: 'always'
+    depends_on:
+      - db
+    restart: 'always'
+    ports:
+      - '80:80'
+    links:
+      - db
+  db:
+    image: mariadb:10.5
+    restart: always
+    volumes: 
+      - /var/lib/mysql/data:/dbms/data
+      - /var/lib/mysql/logs:/dbms/logs
+      - /var/docker/mariadb/conf:/dbms/conf
+    environment:
+      MYSQL_ROOT_PASSWORD: MARIA-ROOT
+      MYSQL_DATABASE: MARIA-DB
+      MYSQL_USER: MARIA-USER
+      MYSQL_PASSWORD: MARIA-USERR-PW
