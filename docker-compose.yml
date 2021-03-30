@@ -2,13 +2,14 @@ version: '3.4'
 
 services:
   w2021assign2:
-    image: "php:8.0-apache"
+    build: 
+      dockerfile: Dockerfile
+      context: .
     volumes:
       - ./src:/var/www/html/
     restart: 'always'
     depends_on:
       - db
-    restart: 'always'
     ports:
       - '80:80'
     links:
