@@ -1,6 +1,6 @@
 <?php
-define('DBHOST', 'localhost');
-define('DBNAME', 'companies');
+define('DBHOST', 'db');
+define('DBNAME', 'stocks');
 define('DBUSER', 'MARIA-USER');
 define('DBPASS', 'MARIA-USERR-PW');
 

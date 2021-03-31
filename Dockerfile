@@ -11,3 +11,5 @@ RUN apt-get update && \
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg --enable-gd
 
 RUN docker-php-ext-install gd
+
+RUN docker-php-ext-install pdo pdo_mysql

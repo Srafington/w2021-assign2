@@ -6,10 +6,8 @@ class DatabaseHelper {
         $user = $values[1];
         $password = $values[2];
         $pdo = new PDO($connString,$user,$password);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE,
-        PDO::ERRMODE_EXCEPTION);
-        $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,
-        PDO::FETCH_ASSOC);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
         return $pdo;
     }
 /*
@@ -39,8 +37,7 @@ the passed array of parameters (null if none)
 
 class CompanyDB{
 
-    private static $baseSQL = "SELECT * FROM companies
-    ORDER BY name";
+    private static $baseSQL = "SELECT * FROM companies";
     public function __construct($connection) {
         $this->pdo = $connection;
     }
@@ -51,9 +48,9 @@ class CompanyDB{
         return $statement->fetchAll();
     }
     public function getAllForCompany($symbol) {
-        $sql = self::$baseSQL . " WHERE companies.symbol=$symbol";
+        $sql = self::$baseSQL . " WHERE symbol = :symbol";
         $statement = DatabaseHelper::runQuery($this->pdo, $sql,
-        Array($symbol));
+        Array("symbol" => $symbol));
         return $statement->fetchAll();
         }
 }

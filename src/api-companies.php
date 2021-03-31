@@ -5,13 +5,14 @@ require_once 'index-db-classes.inc.php';
 header('Content-type: application/json');
 // indicate whether other domains can use this API
 header("Access-Control-Allow-Origin: *");
-try {$conn = DatabaseHelper::createConnection(array(DBCONNSTRING,
+try {
+    $conn = DatabaseHelper::createConnection(array(DBCONNSTRING,
     DBUSER, DBPASS));
     $gateway = new CompanyDB($conn);
     if ( isCorrectQueryStringInfo("symbol") )
-    $companies = $gateway->getAllForCompany($_GET["symbol"]);
+        $companies = $gateway->getAllForCompany($_GET["symbol"]);
     else
-    $companies = $gateway->getAll();
+        $companies = $gateway->getAll();
     echo json_encode( $companies, JSON_NUMERIC_CHECK );
 } catch (Exception $e) { die( $e->getMessage() ); 
 }
