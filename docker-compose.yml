@@ -24,7 +24,7 @@ services:
       - /database/init.sql:/docker-entrypoint-initdb.d/init.sql
     environment:
       MYSQL_ROOT_PASSWORD: MARIA-ROOT
-      MYSQL_DATABASE: MARIA-DB
+      MYSQL_DATABASE: stocks
       MYSQL_USER: MARIA-USER
       MYSQL_PASSWORD: MARIA-USERR-PW
   phpmyadmin:

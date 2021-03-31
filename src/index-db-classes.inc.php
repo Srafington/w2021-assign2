@@ -51,7 +51,7 @@ class CompanyDB{
         return $statement->fetchAll();
     }
     public function getAllForCompany($symbol) {
-        $sql = self::$baseSQL . " WHERE companies.Symbol=$symbol";
+        $sql = self::$baseSQL . " WHERE companies.symbol=$symbol";
         $statement = DatabaseHelper::runQuery($this->pdo, $sql,
         Array($symbol));
         return $statement->fetchAll();
