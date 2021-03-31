@@ -36,3 +36,25 @@ the passed array of parameters (null if none)
         return $statement;
     }
 }
+
+class CompanyDB{
+
+    private static $baseSQL = "SELECT * FROM companies
+    ORDER BY name";
+    public function __construct($connection) {
+        $this->pdo = $connection;
+    }
+    public function getAll() {
+        $sql = self::$baseSQL;
+        $statement =
+        DatabaseHelper::runQuery($this->pdo, $sql, null);
+        return $statement->fetchAll();
+    }
+    public function getAllForCompany($symbol) {
+        $sql = self::$baseSQL . " WHERE companies.Symbol=$symbol";
+        $statement = DatabaseHelper::runQuery($this->pdo, $sql,
+        Array($symbol));
+        return $statement->fetchAll();
+        }
+}
+
