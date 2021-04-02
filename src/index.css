@@ -26,6 +26,7 @@ body {
     grid-column: 1 / span 3;
     grid-row: 1 / span 1;
     background-color: var(--foreground);
+    padding: 0em 1em 1em 1em;
 }
 
 .container {
