@@ -19,7 +19,7 @@ body {
     border-radius: 5px;
     box-shadow: 5px 5px 5px -2px var(--shadow);
     background-color: var(--background);
-    padding: 0em 1em 1em 1em;
+    padding: 2em 1em 1em 1em;
 }
   
 .h {
@@ -32,7 +32,7 @@ body {
     display: grid;
     grid-gap: 10px;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows:100px 100px 1fr 1fr;
+    grid-template-rows:100px 100px 1fr 1fr 1fr;
     height: 100%;
     width: 100%;
 }
@@ -77,6 +77,20 @@ body {
 .d{
     grid-column: 2 / span 1;
     grid-row: 4 / span 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.e{
+    grid-column: 1 / span 1;
+    grid-row: 5 / span 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.f{
+    grid-column: 2 / span 1;
+    grid-row: 5 / span 1;
     display: flex;
     align-items: center;
     justify-content: center;
