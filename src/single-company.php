@@ -35,7 +35,8 @@ function displayInfo($company){?>
             <form action="favorites.php" method="get">
                 <button class="infoButtons" type="submit" value="favorite"><i class="fas fa-star"></i> Favorites</button>
             </form>
-            <form action="history.php" method="get">
+            <form action="history.php?history=<?php echo $company['symbol']; ?>" method="get">
+                <input id="queryString" type="text" name="history" value="<?php echo $company['symbol']; ?>"/> 
                 <button class="infoButtons" type="submit" value="history"><i class="fas fa-chart-line"></i> History</button>
             </form>
             </section>

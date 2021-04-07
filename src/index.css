@@ -193,16 +193,33 @@ body {
 }
 
 
-#companyList a:link {
+#companyList a:link, a:visited {
     text-decoration: none;
     color: black;
 }
 
-#companyList li{
+  
+#stock {
+    overflow-y: scroll;
+    height: 80%;
+}
+  
+ul#companyList li {
     display: flex;
     flex-direction: row;
     align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px;
 }
+
+#companyList li:hover {
+    background-color: #E5E5E5;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px -2px var(--shadow);
+    transition: 0.15s;
+}
+
 
 .nameLink{
     margin-left: 15px;
@@ -257,4 +274,8 @@ h1 {
     text-align: center;
 
   }
+
+#queryString{
+    display: none;
+}
 
