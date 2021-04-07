@@ -124,3 +124,137 @@ body {
     border-radius: 5px;
     box-shadow: 5px 5px 5px -2px var(--shadow);
 }
+#buttonContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.infoButtons {
+    font-size: 16px;
+    width: 80px;
+    height: 40px;
+    margin: 40px 20px 20px 40px;
+    background-color: var(--foreground);
+    color: var(--background);
+    text-shadow: 2px 2px 3px #555;
+    border: 0px solid var(--shadow);
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px -2px var(--shadow);
+
+}
+
+
+.search {
+    margin-left: 20px;
+    font-size: 13px;
+    padding: 18px 40px 15px 15px;
+    margin-bottom: 12px;
+}
+
+#clearButton {
+    margin-left: 15px;
+    padding: 0.5em;
+    font-size: medium;
+    border-radius: 8px 1px;
+    border: none;
+    background-color: var(--foreground);
+    box-shadow: 4px 4px 5px var(--shadow);
+    color: var(--background);
+}
+#clearButton:active {
+    outline: none;
+    background-color: rgb(11, 76, 150);
+    box-shadow: 2px 2px 3px var(--shadow);
+}
+
+.filterButton{
+    margin-left: 15px;
+    padding: 0.5em;
+    font-size: medium;
+    border-radius: 8px 1px;
+    border: none;
+    background-color: var(--foreground);
+    box-shadow: 4px 4px 5px var(--shadow);
+    color: var(--background);
+}
+
+#loading {
+    padding-top: 50px;
+    text-align: center;
+}
+
+#companyList {
+    list-style-type: none;
+    padding: 20px;
+    margin: 0px;
+    overflow-y: scroll;
+    max-height: 850px;
+}
+
+
+#companyList a:link {
+    text-decoration: none;
+    color: black;
+}
+
+#companyList li{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.nameLink{
+    margin-left: 15px;
+}
+
+.smallLogo{
+    width: 50px;
+    height: 50px;
+}
+
+#zoomLogo {
+    display: hidden;
+}
+
+#zoomLogo img {
+    width: 100px;
+    height: 100px;
+}
+
+#info {
+    padding-left: 40px;
+    padding-right: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+#info label {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+#info span {
+  font-weight: normal;
+  font-size: 15px;
+}
+
+#logo {
+    width: auto;
+    max-width: 50em;
+    margin-left: auto;
+    margin-right: auto;
+    height: 15em;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+h1 {
+    padding: 14px 14px 14px 20px;
+    background-color: var(--foreground);
+    color: var(--background);
+    border-radius: 5px;
+    text-align: center;
+
+  }
+

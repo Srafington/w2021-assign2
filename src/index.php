@@ -3,30 +3,6 @@
 </style>
 
 <?php
-echo '<head>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
-            integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-</head>';
-
-echo '<body><main class="container">';
-
-generateHead();
-echo '<h1 class="t" id="title">Stock Browser</h1>';
-//generateButtons();
-generateAllButtons();
-echo '</body></main>';
-
-function generateHead(){?>
-        <div class="box h"  id="icons">
-            <div>
-                <i id="Credit" class="fas fa-chart-bar"></i>
-            </div>
-            <div>
-                <i id="Credit" class="fa fa-bars"></i>
-            </div>
-        </div>
-<?php
-}
 
 function generateButtons(){?>
     <div class="box a">
@@ -83,6 +59,33 @@ function generateAllButtons(){?>
         </form>
     </div>
 <?php
-
 }
 ?>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Company Financials</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+</head>
+
+<body>
+
+<main class="container">
+<div class="box h"  id="icons">
+            <div>
+                <i id="Credit" class="fas fa-chart-bar"></i>
+            </div>
+            <div>
+                <i id="Credit" class="fa fa-bars"></i>
+            </div>
+</div>
+<h2 class="t" id="title">Stock Browser</h2>
+<?php generateAllButtons(); ?>
+</main>
+</body>
+</html>
