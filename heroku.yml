@@ -1,0 +1,38 @@
+version: '3.4'
+
+services:
+  w2021assign2:
+    build: 
+      dockerfile: Dockerfile
+      context: .
+    volumes:
+      - ./src:/var/www/html/
+    restart: 'always'
+    depends_on:
+      - db
+    ports:
+      - '80:80'
+    links:
+      - db
+  db:
+    image: mariadb:10.5
+    restart: always
+    volumes: 
+      - /var/lib/mysql/data:/dbms/data
+      - /var/lib/mysql/logs:/dbms/logs
+      - /var/docker/mariadb/conf:/dbms/conf
+      - /database/init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      MYSQL_ROOT_PASSWORD: MARIA-ROOT
+      MYSQL_DATABASE: stocks
+      MYSQL_USER: MARIA-USER
+      MYSQL_PASSWORD: MARIA-USERR-PW
+  phpmyadmin:
+      image: phpmyadmin/phpmyadmin:latest
+      ports:
+        - 8000:80
+      environment:
+        - PMA_ARBITRARY=1
+        - PMA_HOST=db
+      depends_on:
+        - db
