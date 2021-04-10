@@ -56,7 +56,7 @@ class CompanyDB{
 }
 
 class SessionManager{
-    private static $baseSQL = "SELECT id, country, firstname, lastname, email,  FROM users";
+    private static $baseSQL = "SELECT id, country, firstname, lastname, email, password  FROM users";
     public function __construct($connection) {
         $this->pdo = $connection;
     }
@@ -69,7 +69,7 @@ class SessionManager{
             $hash = password_hash($pass, PASSWORD_BCRYPT, ["cost" => 12]);
             if($hash == $results[0]['password']){
                 $_SESSION["name"] = $results[0]['firstname'] . ' ' . $results[0]['lastname'];
-                $_SESSION["id"] = $results[0]['id'];
+                $_SESSION["userid"] = $results[0]['id'];
                 return true;
             }
         }
@@ -78,7 +78,7 @@ class SessionManager{
     }
     public function logout() {
         session_start();
-        unset($_SESSION['id']);
+        unset($_SESSION['userid']);
         unset($_SESSION['name']);
         
         header("Location:/");
