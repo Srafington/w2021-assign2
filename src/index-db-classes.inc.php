@@ -55,3 +55,32 @@ class CompanyDB{
         }
 }
 
+class SessionManager{
+    private static $baseSQL = "SELECT id, country, firstname, lastname, email,  FROM users";
+    public function __construct($connection) {
+        $this->pdo = $connection;
+    }
+    public function login($user, $pass) {
+        $sql = self::$baseSQL . " WHERE email = :user";
+        $statement = DatabaseHelper::runQuery($this->pdo, $sql,
+        Array("user" => $user));
+        $results = $statement->fetchAll();
+        if (count($results) > 0){
+            $hash = password_hash($pass, PASSWORD_BCRYPT, ["cost" => 12]);
+            if($hash == $results[0]['password']){
+                $_SESSION["name"] = $results[0]['firstname'] . ' ' . $results[0]['lastname'];
+                $_SESSION["id"] = $results[0]['id'];
+                return true;
+            }
+        }
+        //check user in table, then check hashed pw, if valid set session and return true, if not return false
+        return false;
+    }
+    public function logout() {
+        session_start();
+        unset($_SESSION['id']);
+        unset($_SESSION['name']);
+        
+        header("Location:/");
+    }
+}
