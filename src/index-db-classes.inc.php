@@ -83,4 +83,8 @@ class SessionManager{
         
         header("Location:/");
     }
+
+    public function __destruct() {
+        $this->pdo = null;
+    }
 }
