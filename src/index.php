@@ -1,10 +1,11 @@
 <style>
-<?php include "index.css"; ?>
+    <?php include "index.css"; ?>
 </style>
 
 <?php
 
-function generateButtons(){?>
+function generateButtons()
+{ ?>
     <div class="box a">
         <form action="about.php" method="get">
             <button class="buttonIcons" type="submit" value="about"><i class="far fa-question-circle"></i> About</button>
@@ -27,7 +28,8 @@ function generateButtons(){?>
     </div>
 <?php
 }
-function generateAllButtons(){?>
+function generateAllButtons()
+{ ?>
     <div class="box a">
         <form action="about.php" method="get">
             <button class="buttonIcons" type="submit" value="about"><i class="far fa-question-circle"></i> About</button>
@@ -69,23 +71,29 @@ function generateAllButtons(){?>
     <meta charset="utf-8" />
     <title>Company Financials</title>
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
-        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 </head>
 
 <body>
 
-<main class="container">
-<div class="box h"  id="icons">
+    <main class="container">
+        <div class="box h" id="icons">
             <div>
                 <i id="Credit" class="fas fa-chart-bar"></i>
             </div>
             <div>
                 <i id="Credit" class="fa fa-bars"></i>
             </div>
-</div>
-<h2 class="t" id="title">Stock Browser</h2>
-<?php generateAllButtons(); ?>
-</main>
+        </div>
+        <h2 class="t" id="title">Stock Browser</h2>
+        <?php
+        if (isset($_SESSION['user'])) {
+            generateAllButtons();
+        } else {
+            generateButtons();
+        }
+        ?>
+    </main>
 </body>
+
 </html>
