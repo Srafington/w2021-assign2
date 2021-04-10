@@ -110,6 +110,8 @@ body {
 
 #title{
     font-size:5vw;
+    vertical-align: middle;
+    margin: auto;
 }
 
 .buttonIcons{
