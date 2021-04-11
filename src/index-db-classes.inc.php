@@ -102,23 +102,29 @@ class SessionManager{
         //check user in table, then check hashed pw, if valid set session and return true, if not return false
         return false;
     }
+
+    private static function startSessionIfNotStarted(){
+        if(session_status ( ) == PHP_SESSION_NONE){
+            session_start();
+        }
+    }
     public static function logout() {
-        session_start();
+        self::startSessionIfNotStarted();
         unset($_SESSION['userid']);
         unset($_SESSION['name']);
         
         header("Location:/");
     }
     public static function upsertSessionVar($key, $value) {
-        session_start();
+        self::startSessionIfNotStarted();
         $_SESSION[$key] = $value;        
     }
     public static  function getSessionVar($key) {
-        session_start();
+        self::startSessionIfNotStarted();
         return $_SESSION[$key];
     }
     public static function clearSessionVar($key) {
-        session_start();
+        self::startSessionIfNotStarted();
         unset($_SESSION[$key]);        
     }
 
