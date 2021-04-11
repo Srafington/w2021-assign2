@@ -96,22 +96,22 @@ class SessionManager{
         //check user in table, then check hashed pw, if valid set session and return true, if not return false
         return false;
     }
-    public function logout() {
+    public static function logout() {
         session_start();
         unset($_SESSION['userid']);
         unset($_SESSION['name']);
         
         header("Location:/");
     }
-    public function upsertSessionVar($key, $value) {
+    public static function upsertSessionVar($key, $value) {
         session_start();
         $_SESSION[$key] = $value;        
     }
-    public function getSessionVar($key) {
+    public static  function getSessionVar($key) {
         session_start();
         return $_SESSION[$key];
     }
-    public function clearSessionVar($key) {
+    public static function clearSessionVar($key) {
         session_start();
         unset($_SESSION[$key]);        
     }
