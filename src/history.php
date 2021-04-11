@@ -8,10 +8,14 @@ try {
     $conn = DatabaseHelper::createConnection(array(DBCONNSTRING,
     DBUSER, DBPASS));
     if (isset($_GET['history'])) {
+    SessionManager::upsertSessionVar('symbol', $_GET['history']);
     $gateway = new HistoryDB($conn);
     $history = $gateway->getAllForHistory($_GET["history"]);
-    } else {
-    echo "Error";
+    } else if (isset($_GET['sort'])){
+    $gateway = new HistoryDB($conn);
+    $history = $gateway->getSortedAllForHistory(SessionManager::getSessionVar('symbol'), $_GET["history"]);    
+    }else{
+        echo "Error";
     }
     } catch (Exception $e) {
     die( $e->getMessage() );
@@ -24,8 +28,8 @@ try {
         echo "<div id='table'>";
         echo "<table id='stock'>";
         echo "<tr id='stockHeaders'>";
-        echo "<th>Date</th>";
-        echo "<th>Volume</th>";
+        echo "<th><a href=''>Date</a></th>";
+        echo "<th><a href='?sort=date'>Volume</a></th>";;
         echo "<th>Open</th>";
         echo "<th>Close</th>";
         echo "<th>High</th>";

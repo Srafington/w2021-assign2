@@ -27,7 +27,7 @@ function displayInfo($company){?>
                 <label>Sector: <span><?=$company["sector"]; ?></span></label>
                 <label>Subindustry: <span><?=$company["subindustry"]; ?></span></label>
                 <label>Address: <span><?=$company["address"]; ?></span></label>
-                <label>Website: <span><a href='<?=$company["website"];?>'><?php echo $company["website"]; ?></a></span></label>
+                <label>Website: <span><a href='<?=$company["website"];?>'><?=$company["website"]; ?></a></span></label>
                 <label>Exchange: <span><?=$company["exchange"]; ?></span></label>
                 <label>Description: <span><?= $company["description"]; ?></span></label>
             </section>

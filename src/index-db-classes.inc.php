@@ -72,7 +72,13 @@ class HistoryDB{
         $statement = DatabaseHelper::runQuery($this->pdo, $sql,
         Array("symbol" => $symbol));
         return $statement->fetchAll();
-        }
+    }
+    public function getSortedAllForHistory($symbol, $sort) {
+        $sql = self::$baseSQL . " WHERE symbol = :symbol ORDER BY :sort DESC";
+        $statement = DatabaseHelper::runQuery($this->pdo, $sql,
+        Array("symbol" => $symbol));
+        return $statement->fetchAll();
+    }
 }
 
 class SessionManager{
