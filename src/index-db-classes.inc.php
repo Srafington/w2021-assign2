@@ -103,6 +103,20 @@ class SessionManager{
         
         header("Location:/");
     }
+    public function upsertSessionVar($key, $value) {
+        session_start();
+        $_SESSION[$key] = $value;        
+    }
+    public function getSessionVar($key) {
+        session_start();
+        return $_SESSION[$key];
+    }
+    public function clearSessionVar($key) {
+        session_start();
+        unset($_SESSION[$key]);        
+    }
+
+
 
     public function __destruct() {
         $this->pdo = null;
