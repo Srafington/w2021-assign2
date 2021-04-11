@@ -18,6 +18,7 @@ try {
     } else {
         echo "Error";
     }
+    echo json_encode($history);
 } catch (Exception $e) {
     die($e->getMessage());
 }
@@ -31,7 +32,7 @@ function displayHistory($history)
     echo "<table id='stock'>";
     echo "<tr id='stockHeaders'>";
     echo "<th><a href=''>Date</a></th>";
-    echo "<th><a href='?sort=date'>Volume</a></th>";;
+    echo "<th><a href='?sort=volume'>Volume</a></th>";;
     echo "<th>Open</th>";
     echo "<th>Close</th>";
     echo "<th>High</th>";
