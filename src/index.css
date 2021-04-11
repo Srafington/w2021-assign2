@@ -214,6 +214,7 @@ ul#companyList li {
     cursor: pointer;
     font-size: 16px;
     padding: 10px;
+    height: 50px;
 }
 
 #companyList li:hover {
@@ -230,7 +231,7 @@ ul#companyList li {
 
 .smallLogo{
     width: 50px;
-    height: 50px;
+    margin: auto;
 }
 
 #zoomLogo {
