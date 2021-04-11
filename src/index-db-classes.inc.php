@@ -28,7 +28,6 @@ the passed array of parameters (null if none)
             // Use a prepared statement if parameters
             $statement = $connection->prepare($sql);
             $executedOk = $statement->execute($parameters);
-            echo "$sql<br>";
             if (!$executedOk) throw new PDOException;
         } else {
             // Execute a normal query

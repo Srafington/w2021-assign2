@@ -18,7 +18,6 @@ try {
     } else {
         echo "Error";
     }
-    echo json_encode($history);
 } catch (Exception $e) {
     die($e->getMessage());
 }
