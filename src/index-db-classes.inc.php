@@ -36,6 +36,15 @@ the passed array of parameters (null if none)
         }
         return $statement;
     }
+    public static function describeTable($connection, $table)
+    {
+        $statement = null;
+        // Execute a normal query
+        $statement = $connection->query("DESCRIBE $table");
+        $executedOk = $statement->execute();
+            if (!$executedOk) throw new PDOException;
+        return $statement;
+    }
 }
 
 class CompanyDB
@@ -92,7 +101,13 @@ class HistoryDB
     }
     public function getSortedAllForHistory($symbol, $sort)
     {
-        $sql = self::$baseSQL . " WHERE symbol = :symbol ORDER BY $sort DESC";//oh I hate this
+        $columns = DatabaseHelper::describeTable($this->pdo, 'history')->fetchAll();
+        //Make sure that the sort param is valid to protect against injection, since MySQL is dumb and won't let me bind the sorts
+        if(in_array($sort, array_column($columns, 'Field'))){
+            $sql = self::$baseSQL . " WHERE symbol = :symbol ORDER BY $sort DESC"; 
+        } else {
+            $sql = self::$baseSQL . " WHERE symbol = :symbol ORDER BY 1 DESC"; 
+        }
         $statement = DatabaseHelper::runQuery(
             $this->pdo,
             $sql,
