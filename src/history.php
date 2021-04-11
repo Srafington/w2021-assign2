@@ -7,12 +7,14 @@ try {
         DBUSER, DBPASS
     ));
     if (isset($_GET['history'])) {
-        SessionManager::upsertSessionVar('symbol', $_GET['history']);
+        $symbol = $_GET["history"];
+        SessionManager::upsertSessionVar('symbol', $symbol);
         $gateway = new HistoryDB($conn);
-        $history = $gateway->getAllForHistory($_GET["history"]);
+        $history = $gateway->getAllForHistory($symbol);
     } else if (isset($_GET['sort'])) {
         $gateway = new HistoryDB($conn);
-        $history = $gateway->getSortedAllForHistory(SessionManager::getSessionVar('symbol'), $_GET["history"]);
+        $symbol = SessionManager::getSessionVar('symbol');
+        $history = $gateway->getSortedAllForHistory($symbol, $_GET["sort"]);
     } else {
         echo "Error";
     }
@@ -23,7 +25,7 @@ try {
 function displayHistory($history)
 {
     echo "<h1>Company Stock Data</h1>";
-    echo "<img id='historyLogo' src='/logos/" . $_GET['history'] . ".svg'>";
+    echo "<img id='historyLogo' src='/logos/" . SessionManager::getSessionVar('symbol') . ".svg'>";
     echo "<form action='history.php' method='get'>";
     echo "<div id='table'>";
     echo "<table id='stock'>";
