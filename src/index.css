@@ -268,6 +268,16 @@ ul#companyList li {
     margin-top: 40px;
     margin-bottom: 40px;
 }
+#historyLogo {
+    display: block;
+    width: auto;
+    max-width: 20em;
+    max-height: 9em;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
 
 h1 {
     padding: 14px 14px 14px 20px;
@@ -278,7 +288,45 @@ h1 {
 
   }
 
-#queryString{
+.queryString{
     display: none;
 }
+
+#stock {
+    overflow-y: scroll;
+    height: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#stock th:hover {
+    cursor: pointer;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    display: table;
+    text-align: center;
+  }
+
+  #table{
+    display: block;
+    max-height: 650px;
+    overflow-y: scroll;
+    width: 100%;
+    padding-top: 15px;
+  }
+  
+  tr:nth-child(even) {
+    background: #ddd;
+  }
+  td {
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+  
+  th {
+      font-size: 16px;
+  }
 

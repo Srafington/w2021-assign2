@@ -55,6 +55,26 @@ class CompanyDB{
         }
 }
 
+class HistoryDB{
+
+    private static $baseSQL = "SELECT * FROM history";
+    public function __construct($connection) {
+        $this->pdo = $connection;
+    }
+    public function getAll() {
+        $sql = self::$baseSQL;
+        $statement =
+        DatabaseHelper::runQuery($this->pdo, $sql, null);
+        return $statement->fetchAll();
+    }
+    public function getAllForHistory($symbol) {
+        $sql = self::$baseSQL . " WHERE symbol = :symbol ORDER BY date DESC";
+        $statement = DatabaseHelper::runQuery($this->pdo, $sql,
+        Array("symbol" => $symbol));
+        return $statement->fetchAll();
+        }
+}
+
 class SessionManager{
     private static $baseSQL = "SELECT id, country, firstname, lastname, email, password  FROM users";
     public function __construct($connection) {
