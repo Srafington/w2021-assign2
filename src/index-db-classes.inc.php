@@ -164,7 +164,7 @@ class SessionManager
         self::startSessionIfNotStarted();
         $_SESSION[$key] = $value;
     }
-    public static  function getSessionVar($key)
+    public static function getSessionVar($key)
     {
         self::startSessionIfNotStarted();
         return $_SESSION[$key];
@@ -173,6 +173,25 @@ class SessionManager
     {
         self::startSessionIfNotStarted();
         unset($_SESSION[$key]);
+    }
+
+    public static function addFavorite($favorite)
+    {
+        self::startSessionIfNotStarted();
+        $_SESSION['favorites'][$favorite['symbol']] = $favorite;
+    }
+
+    public static function removeFavorite($favorite)
+    {
+        self::startSessionIfNotStarted();
+        unset($_SESSION['favorites'][$favorite['symbol']]);
+    }
+    public static function getFavorites()
+    {
+        self::startSessionIfNotStarted();
+        if(isset($_SESSION['favorites'])){
+            return $_SESSION['favorites'];
+        }
     }
 
 
