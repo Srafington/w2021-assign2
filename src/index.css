@@ -197,7 +197,7 @@ body {
 }
 
 
-#companyList a:link, a:visited {
+#companyList a:link, #companyList a:visited {
     text-decoration: none;
     color: black;
 }
@@ -341,12 +341,12 @@ table {
     font-size: small;
 }
 
-.infoButtons a:link, a:visited {
+.infoButtons a:link, .infoButtons a:visited {
     text-decoration: none;
     color: white;
 }
 
-#table a:link, a:visited {
+#table a:link, #table a:visited {
     text-decoration: none;
     color: black;
 }

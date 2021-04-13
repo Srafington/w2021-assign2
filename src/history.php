@@ -29,7 +29,7 @@ function displayHistory($history)
     echo "<div id='table'>";
     echo "<table id='stock'>";
     echo "<tr id='stockHeaders'>";
-    echo "<th><a href=''>Date</a></th>";
+    echo "<th><a href='?history=" . SessionManager::getSessionVar('symbol') . "'>Date</a></th>";
     echo "<th><a href='?sort=volume'>Volume</a></th>";;
     echo "<th><a href='?sort=open'>Open</a></th>";
     echo "<th><a href='?sort=close'>Close</a></th>";
