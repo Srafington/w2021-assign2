@@ -2,10 +2,12 @@
 <?php
 
 function generateDisplay(){?>
-    <main class="csBox">
+    <main class="csBox with-backgound">
         <div id="csBlock">
-            <div id="csIcon"><i class="fas fa-pencil-ruler"></i><i class="fas fa-upload"></i><i class="fas fa-laptop-code"></i></div>
-            <div><h2>COMING SOON</h2></div>
+            <div>
+                <div id="csIcon"><i class="fas fa-pencil-ruler"></i><i class="fas fa-upload"></i><i class="fas fa-laptop-code"></i></div>
+                <h2>COMING SOON</h2>
+            </div>
         </div>
     </main>
 <?php
