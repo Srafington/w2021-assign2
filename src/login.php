@@ -27,11 +27,13 @@ function generateDisplay($error)
         <div id="csBlock">
             <h2> Log In</h2>
             <form action="<?= $_SERVER['REQUEST_URI'] ?>" method="POST">
-                <label for="username">Username: </label>
-                <input type="text" id="username" name="username">
-                <br><label for="password">Password: </label>
-                <input type="password" id="password" name="password">
-                <br><input type="submit" value="Sign In">
+                <div class="login-block"><label for="username">Username: </label>
+                <input class="login-input" type="text" id="username" name="username"></div>
+
+                <div class="login-block"><label for="password">Password: </label>
+                <input class="login-input" type="password" id="password" name="password"></div>
+                <input type="submit" value="Sign In">
+                <input type="submit" value="Cancel">
                 <div class="error"><?= $error ?></div>
             </form>
         </div>

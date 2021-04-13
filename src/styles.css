@@ -359,11 +359,15 @@ th {
   align-items: center;
   text-align: center;
   vertical-align: middle;
-  border: 0px solid var(--shadow);
+  border: 0px outset;
+  border-right: 3px outset;
+  border-bottom: 3px outset;
+  border-color: var(--foregrounda);
   border-radius: 5px;
-  box-shadow: 5px 5px 5px -2px var(--shadow);
-  padding: 1em 1em 1em 1em;
+  box-shadow: 5px 5px 5px -2px var(--foregrounda);
+  padding: 1em 3em 1em 3em;
   backdrop-filter: blur(8px);
+  text-shadow: 2px 2px 3px var(--shadow);
   
 }
 
@@ -401,4 +405,29 @@ th {
 .list-span {
   padding-left: 3em;
   padding-right: 0em;
+}
+
+.login-input{
+
+  height: 2em;
+  border: none;
+  margin-left: 1em;
+  border-radius: 7px;
+  padding-left: .5em ;
+  
+}
+
+.login-block{
+  padding: .5em .5em .5em 1em;
+  margin: 1em;
+  background-color: rgba(150, 150, 150, .2);
+  border-style: none;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 1em;
+  backdrop-filter: blur(8px);
+  box-shadow: 5px 5px 5px -2px var(--foregrounda);
+  align-items: center;
+  
+  
 }
