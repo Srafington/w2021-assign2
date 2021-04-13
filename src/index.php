@@ -1,5 +1,5 @@
 <style>
-    <?php include "index.css"; ?>
+    <?php include "styles.css"; ?>
 </style>
 
 <?php
