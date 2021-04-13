@@ -6,9 +6,7 @@ function generateList(){ ?>
                 <form class=textbox action="single-company.php" method="get">
                     <fieldset>
                         <input type="text" class="search" placeholder="Type for matching company"
-                        title="filter"><button type="submit" class="filterButton" id="submitButton"><i class="fas fa-check-square"></i></button>
-                        <button type="reset" class="filterButton" id="clearButton"><i
-                            class="fas fa-undo"></i></button>
+                        title="filter"><button type="reset" class="filterButton" id="clearButton"><i class="fas fa-undo"></i></button>
                             <div id="loading">
                                 <i class="fas fa-10x fa-spinner fa-pulse"></i>
                             </div>
