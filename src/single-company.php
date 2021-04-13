@@ -26,6 +26,9 @@ if (isset($_POST['favorite'])) {
         SessionManager::removeFavorite($company['symbol']);
     } else {
         SessionManager::addFavorite($company);
+        header("Location: /favorites.php");
+        die();
+
     }
     $isFav = !$isFav;
 } 
