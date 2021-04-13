@@ -26,16 +26,15 @@ function displayHistory($history)
 {
     echo "<h1>Company Stock Data</h1>";
     echo "<img id='historyLogo' src='/logos/" . SessionManager::getSessionVar('symbol') . ".svg'>";
-    echo "<form action='history.php' method='get'>";
     echo "<div id='table'>";
     echo "<table id='stock'>";
     echo "<tr id='stockHeaders'>";
     echo "<th><a href=''>Date</a></th>";
     echo "<th><a href='?sort=volume'>Volume</a></th>";;
-    echo "<th>Open</th>";
-    echo "<th>Close</th>";
-    echo "<th>High</th>";
-    echo "<th>Low</th>";
+    echo "<th><a href='?sort=open'>Open</a></th>";
+    echo "<th><a href='?sort=close'>Close</a></th>";
+    echo "<th><a href='?sort=high'>High</a></th>";
+    echo "<th><a href='?sort=low'>Low</a></th>";
     echo "</tr>";
     foreach ($history as $key => $value) { ?>
         <tr>

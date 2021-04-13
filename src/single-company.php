@@ -61,9 +61,8 @@ function displayInfo($company, $isFav)
                       </span>
                 Favorites</button>
             </form>
-            <form action="history.php?history=<?= $company['symbol']; ?>" method="get">
-                <input class="queryString" type="text" name="history" value="<?= $company['symbol']; ?>" />
-                <button class="infoButtons" type="submit" value="history"><i class="fas fa-chart-line"></i>History</button>
+            <form action="" method="GET">
+                <button class="infoButtons" type="submit" value="history"><i class="fas fa-chart-line"></i><a href='?history=<?= $company['symbol']; ?>'> History</a></button>
             </form>
         </section>
     </div>

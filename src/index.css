@@ -339,3 +339,13 @@ table {
 .fa-stack {
     font-size: small;
 }
+
+.infoButtons a:link, a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+#table a:link, a:visited {
+    text-decoration: none;
+    color: black;
+}
