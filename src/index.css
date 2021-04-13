@@ -351,34 +351,47 @@ table {
     color: black;
 }
 
-#csBox {
+#csBlock {
     background-color: var(--foreground);
     color: white;
-    padding: 20px;
     height: auto;
     display: flex;
-    min-height: 500px;
+    max-height: 200px;
     width: auto;
+    max-width: 400px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border: 0px solid var(--shadow);
     border-radius: 5px;
     box-shadow: 5px 5px 5px -2px var(--shadow);
-    padding: 2em 1em 1em 1em;
+    padding: 1em 1em 1em 1em;
 }
 
-#csBox h2{
+.csBox {
+    border: 0px solid var(--shadow);
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px -2px var(--shadow);
+    background-color: var(--background);
+    padding: 10em 1em 1em 1em;
+    display: flex;
+    justify-content: center;
+    min-height: 400px;
+}
+
+#csBlock h2{
     font-size:3vw;
 }
 
 #csIcon{
     font-size: 40px;
     padding-right: 10px;
+    padding-left: 10px;
 }
 
 #csIcon i{
     padding-right: 10px;
+    padding-left: 10px;
 }
 .list-span {
     padding-left: 3em;

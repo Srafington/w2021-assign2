@@ -2,8 +2,8 @@
 <?php
 
 function generateDisplay(){?>
-    <main class="box">
-        <div id="csBox">
+    <main class="csBox">
+        <div id="csBlock">
             <div id="csIcon"><i class="fas fa-pencil-ruler"></i><i class="fas fa-upload"></i><i class="fas fa-laptop-code"></i></div>
             <div><h2>COMING SOON</h2></div>
         </div>
