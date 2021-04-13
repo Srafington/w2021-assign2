@@ -350,3 +350,33 @@ table {
     text-decoration: none;
     color: black;
 }
+
+#csBox {
+    background-color: var(--foreground);
+    color: white;
+    padding: 20px;
+    height: auto;
+    display: flex;
+    min-height: 500px;
+    width: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 0px solid var(--shadow);
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px -2px var(--shadow);
+    padding: 2em 1em 1em 1em;
+}
+
+#csBox h2{
+    font-size:3vw;
+}
+
+#csIcon{
+    font-size: 40px;
+    padding-right: 10px;
+}
+
+#csIcon i{
+    padding-right: 10px;
+}
