@@ -181,10 +181,10 @@ class SessionManager
         $_SESSION['favorites'][$favorite['symbol']] = $favorite;
     }
 
-    public static function removeFavorite($favorite)
+    public static function removeFavorite($favoriteID)
     {
         self::startSessionIfNotStarted();
-        unset($_SESSION['favorites'][$favorite['symbol']]);
+        unset($_SESSION['favorites'][$favoriteID]);
     }
     public static function getFavorites()
     {

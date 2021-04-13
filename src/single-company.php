@@ -23,7 +23,7 @@ $isFav = isset(SessionManager::getFavorites()[$company['symbol']]);
 
 if (isset($_POST['favorite'])) {
     if($isFav){
-        SessionManager::removeFavorite($company);
+        SessionManager::removeFavorite($company['symbol']);
     } else {
         SessionManager::addFavorite($company);
     }
