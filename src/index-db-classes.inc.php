@@ -73,6 +73,30 @@ class CompanyDB
         return $statement->fetchAll();
     }
 }
+class PortfolioDB
+{
+
+    private static $baseSQL = "SELECT symbol, sum(amount) as ammount, name, close, sum(amount)*(close) as total_value
+    from portfolio p
+        join history using (symbol)
+        join companies using (symbol)
+    where userId = :userID
+      and date = (select max(date) from history where symbol = p.symbol)
+    group by symbol, name, close";
+    public function __construct($connection)
+    {
+        $this->pdo = $connection;
+    }
+    public function getPortfolio()
+    {
+        if(SessionManager::isLoggedIn()){
+            $sql = self::$baseSQL;
+            $statement = DatabaseHelper::runQuery($this->pdo, $sql, 
+                array("userID" => $_SESSION['userID']));
+            return $statement->fetchAll();
+        }
+    }
+}
 
 class HistoryDB
 {
@@ -136,7 +160,7 @@ class SessionManager
         if (count($results) > 0) {
             if (password_verify( $pass, $results[0]['password'])) {
                 $_SESSION["user"] = $results[0]['firstname'] . ' ' . $results[0]['lastname'];
-                $_SESSION["userid"] = $results[0]['id'];
+                $_SESSION["userID"] = $results[0]['id'];
                 return true;
             }
         }
@@ -153,7 +177,7 @@ class SessionManager
     public static function logout()
     {
         self::startSessionIfNotStarted();
-        unset($_SESSION['userid']);
+        unset($_SESSION['userID']);
         unset($_SESSION['user']);
 
         header("Location:/");
