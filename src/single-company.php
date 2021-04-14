@@ -48,7 +48,7 @@ function displayInfo($company, $isFav)
             <label>Exchange: <span><?= $company["exchange"]; ?></span></label>
             <label>Description: <span><?= $company["description"]; ?></span></label>
         </section>
-        <section id="buttonContainer">
+        <section class="buttonContainer">
             <form action="" method="POST">
                 <input type="hidden" name="favorite" value="fav" />
                 <button class="infoButtons" type="submit" value="favorite">
@@ -58,7 +58,7 @@ function displayInfo($company, $isFav)
                             if($isFav) {
                                 echo '<i id="dark" class="fas fa-minus fa-stack-1x fa-xs"></i>';
                             } else {
-                                echo '<i id="dark" class="fas fa-plus fa-stack-1x fa-xs" id="dark"></i>';
+                                echo '<i id="dark" class="fas fa-plus fa-stack-1x fa-xs"></i>';
                             }
                         ?>
                       </span>

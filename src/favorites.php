@@ -45,7 +45,7 @@ if (isset($_POST['remove-all'])) {
                         echo "<span class='list-span'>$symbol</span><span class='list-span'>  " . $details['name'] . "</span></a>";
                         echo '<input type="hidden" name="remove" value="' . $symbol . '" />';
                         echo '<button class="infoButtons" type="submit" value="' . $symbol . '">';
-                        echo '<span class="fa-stack fa-2x">';
+                        echo '<span class="fa-stack fa-1x">';
                         echo '<i class="fas fa-star fa-stack-2x fa-xs"></i>';
                         echo '<i id="dark" class="fas fa-minus fa-stack-1x fa-xs"></i>';
                         echo '</span>';
@@ -62,7 +62,7 @@ if (isset($_POST['remove-all'])) {
         <form action="" method="POST">
             <input type="hidden" name="remove-all" value="" />
             <button class="infoButtons" type="submit" value="remove-all">
-                <span class="fa-stack fa-2x">
+                <span class="fa-stack fa-1x">
                     <i class="fas fa-star fa-stack-2x fa-xs"></i>
                     <i id="dark" class="fas fa-times fa-stack-1x fa-sm"></i>
                 </span>
