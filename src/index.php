@@ -2,6 +2,8 @@
 
 include "header.inc.php";
 
+$isLoggedIn = SessionManager::isLoggedIn();
+
 function generateButtons()
 { ?>
     <div class="box a">
@@ -54,8 +56,9 @@ function generateAllButtons()
         </form>
     </div>
     <div class="box f">
-        <form action="favorites.php" method="get">
-            <button class="buttonIcons" type="submit" value="logout"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        <form action="login.php" method="get">
+            <input type="hidden" name="LOGOUT" value="logout">
+            <button class="buttonIcons" type="submit" value="LOGOUT"><i class="fas fa-sign-out-alt"></i> Logout</button>
         </form>
     </div>
 <?php
@@ -75,17 +78,9 @@ function generateAllButtons()
 <body>
 
     <main class="container">
-        <?php drawHeader("Stocks Browser", true); ?>
-        <!-- <div class="box h" id="icons">
-            <div>
-                <i id="Credit" class="fas fa-chart-bar"></i>
-            </div>
-            <div>
-                <i id="Credit" class="fa fa-bars"></i>
-            </div>
-        </div> -->
-        <?php
-        if (isset($_SESSION['user'])) {
+        <?php 
+        drawHeader("Stocks Browser", true); 
+        if ($isLoggedIn) {
             generateAllButtons();
         } else {
             generateButtons();

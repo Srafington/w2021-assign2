@@ -134,9 +134,8 @@ class SessionManager
         );
         $results = $statement->fetchAll();
         if (count($results) > 0) {
-            $hash = password_hash($pass, PASSWORD_BCRYPT, ["cost" => 12]);
-            if ($hash == $results[0]['password']) {
-                $_SESSION["name"] = $results[0]['firstname'] . ' ' . $results[0]['lastname'];
+            if (password_verify( $pass, $results[0]['password'])) {
+                $_SESSION["user"] = $results[0]['firstname'] . ' ' . $results[0]['lastname'];
                 $_SESSION["userid"] = $results[0]['id'];
                 return true;
             }
@@ -155,9 +154,14 @@ class SessionManager
     {
         self::startSessionIfNotStarted();
         unset($_SESSION['userid']);
-        unset($_SESSION['name']);
+        unset($_SESSION['user']);
 
         header("Location:/");
+    }
+    public static function isLoggedIn()
+    {
+        self::startSessionIfNotStarted();
+        return isset($_SESSION['user']);
     }
     public static function upsertSessionVar($key, $value)
     {

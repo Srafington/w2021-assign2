@@ -5,12 +5,12 @@ require_once 'config.inc.php';
 require_once 'styles.php';
 include "header.inc.php";
 
-if (isset($_SESSION['user'])) {
-    header("Location: /");
-    exit;
-}
 if(isset($_GET['LOGOUT'])){
     SessionManager::logout();
+}
+if (SessionManager::isLoggedIn()) {
+    header("Location: /");
+    die();
 }
 
 $error = '';
@@ -37,9 +37,9 @@ function generateDisplay($error)
                 <input class="login-input" type="text" id="username" name="username"></div>
 
                 <div class="login-block"><label for="password">Password: </label>
-                <input class="login-input" type="password" id="password" name="password"></div>
-                <input type="submit" value="Sign In">
-                <input type="submit" value="Cancel">
+                <input class="login-input " type="password" id="password" name="password"></div>
+                <input class="login-input login-button" type="submit" value="Sign In">
+                <input class="login-input login-button" type="submit" value="Cancel">
                 <div class="error"><?= $error ?></div>
             </form>
         </div>

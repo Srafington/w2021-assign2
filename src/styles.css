@@ -438,6 +438,22 @@ th {
   backdrop-filter: blur(8px);
   box-shadow: 5px 5px 5px -2px var(--foregrounda);
   align-items: center;
+  font-size: medium;
+}
+
+.login-button {
+
+  background-color: rgba(150, 150, 150, 0.2);
+  color: white;
+  font-size: medium;
+  padding: .5em 2em .5em 2em;
+  box-shadow: 5px 5px 5px -2px var(--foregrounda);
+  backdrop-filter: blur(8px);
+}
+
+.login-button:active {
+  box-shadow: 2px 2px 2px -2px var(--foregrounda);
+  backdrop-filter: none;
 }
 
 #aboutBlock {
