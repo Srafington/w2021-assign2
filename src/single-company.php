@@ -36,7 +36,7 @@ if (isset($_POST['favorite'])) {
 
 function displayInfo($company, $isFav)
 { ?>
-    <div class="box">
+    <div class="prettyBox">
         <section id="info">
             <img id="logo" src="/logos/<?= $company['symbol']; ?>.svg">
             <label>Company Symbol: <span><?= $company['symbol']; ?></span></label>

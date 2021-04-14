@@ -31,8 +31,8 @@ if (isset($_POST['remove-all'])) {
 
 <body>
 
-    <div>
-        <?php drawHeader("Favorite Companies"); ?>
+    <?php drawHeader("Favorite Companies"); ?>
+    <div class="prettyBox">
 
         <fieldset>
             <ul id="companyList">
