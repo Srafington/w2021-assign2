@@ -25,7 +25,7 @@ try {
 
 function displayHistory($history)
 {
-    drawHeader("Company Stock Data");
+    echo '<div class="prettyBox">';
     echo "<img id='historyLogo' src='/logos/" . SessionManager::getSessionVar('symbol') . ".svg'>";
     echo "<div id='table'>";
     echo "<table id='stock'>";
@@ -50,6 +50,7 @@ function displayHistory($history)
     }
     echo "</table>";
     echo "</div>";
+    echo "</div>";
 }
 ?>
 
@@ -66,7 +67,10 @@ function displayHistory($history)
 </head>
 
 <body>
-    <?php displayHistory($history) ?>
+    <?php 
+    drawHeader("Company Stock Data");
+    displayHistory($history) 
+    ?>
 </body>
 
 </html>

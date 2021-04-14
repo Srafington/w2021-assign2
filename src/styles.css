@@ -231,11 +231,18 @@ ul#companyList li {
 
 #zoomLogo {
   display: hidden;
+  padding: 2em;
+  background-color: rgba(231, 231, 231, 0.3);
+  border-style: none;
+  border-radius: 1em;
+  backdrop-filter: blur(20px);
+  box-shadow: 5px 5px 5px -2px var(--foregrounda);
+  z-index: 1;
+
 }
 
 #zoomLogo img {
-  width: 100px;
-  height: 100px;
+  width: 200px;
 }
 
 #info {
@@ -273,7 +280,6 @@ ul#companyList li {
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;
-  padding-top: 90px;
 }
 
 h1 {

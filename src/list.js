@@ -76,21 +76,19 @@ document.addEventListener("DOMContentLoaded", function () {
             document.querySelector("#companyList").addEventListener('mousemove', function (e) {
                 if (e.target && e.target.nodeName.toLowerCase() == "img") {
                     x = e.clientX;
-                    y = e.clientY;
+                    y = e.clientY+50;
+                    symbol = e.target.alt;
+                    let zoomImg = document.querySelector("#zoomLogo");
+                    zoomImg.innerHTML = "";
+                    zoomImg.style.display = "block";
+                    let img = document.createElement("img");
+                    img.src = `/logos/${symbol}.svg`
+                    zoomImg.appendChild(img);
+                    zoomImg.style.position = "absolute";
+                    zoomImg.style.left = `${x}px`;
+                    zoomImg.style.top = `${y}px`;
                 }
             });
-            symbol = e.target.alt;
-            let zoomImg = document.querySelector("#zoomLogo");
-            zoomImg.innerHTML = "";
-            zoomImg.style.display = "block";
-            let img = document.createElement("img");
-            img.src = `/logos/${symbol}.svg`
-            zoomImg.appendChild(img);
-            zoomImg.style.position = "absolute";
-            //zoomImg.style.left = `${x}px`;
-            zoomImg.style.left = "500px";
-            console.log(x);
-            zoomImg.style.top = `${y}px`;
         }
     });
 
