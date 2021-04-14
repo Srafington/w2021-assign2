@@ -76,7 +76,7 @@ class CompanyDB
 class PortfolioDB
 {
 
-    private static $baseSQL = "SELECT symbol, sum(amount) as ammount, name, close, sum(amount)*(close) as total_value
+    private static $baseSQL = "SELECT symbol, sum(amount) as amount, name, close, sum(amount)*(close) as total_value
     from portfolio p
         join history using (symbol)
         join companies using (symbol)
