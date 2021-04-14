@@ -3,7 +3,7 @@ require_once 'config.inc.php';
 require_once 'header.inc.php';
 require_once 'index-db-classes.inc.php';
 
-if(!SessionManager::isLoggedIn()){
+if (!SessionManager::isLoggedIn()) {
     header("Location: /");
     die();
 }
@@ -36,23 +36,34 @@ $totalValue = 0.0;
 
         <fieldset>
             <ul id="companyList">
-                <?php
-                foreach ($portfolio as $symbol => $details) {
-                    echo '<form action="" method="POST">';
-                    echo "<li> <a href='/single-company.php?symbol=$symbol'>";
-                    echo '<img class="smallLogo" src="/logos/' . $symbol . '.svg" alt="' . $symbol . '">';
-                    echo '<span>' . $details['name'] . '</span>';
-                    echo '<span>' . $details['amount'] . '</span>';
-                    echo '<span>' . $details['close'] . '</span>';
-                    echo '<span>' . $details['total_value'] . '</span>';
-                    echo "</li>";
-                    echo "</form>";
-                ?>
+
+                <table id='stock'>
+                    <tr id='stockHeaders portfolio-head'>
+                        <th></th>
+                        <th>Symbol</th>
+                        <th>Name</th>
+                        <th>Amount</th>
+                        <th>$ Close</th>
+                        <th>$ Value</th>
+                    </tr>
+                        <?php
+                        foreach ($portfolio as $row) {
+                            echo "<tr class='portfolio-row'> ";
+                            echo '<td>' . "<a href='/single-company.php?company=" . $row['symbol'] . "'>" . '<img class="smallLogo" src="/logos/' . $row['symbol'] . '.svg" alt="' . $row['symbol'] . '"></a></td>';
+                            echo '<td>' . "<a href='/single-company.php?company=" . $row['symbol'] . "'>" . $row['symbol'] . '</a></td>';
+                            echo '<td>' . "<a href='/single-company.php?company=" . $row['symbol'] . "'>" . $row['name'] . '</a></td>';
+                            echo '<td>' . number_format($row['amount'], 0, '.') . '</td>';
+                            echo '<td>$' . number_format($row['close'], 2, '.') . '</td>';
+                            echo '<td>$' . number_format($row['total_value'], 2, '.') . '</td>';
+                            echo "</tr>";
+                            $totalValue = $totalValue + $row['total_value'];
+                        }
+                        ?>
+                </table>
             </ul>
         </fieldset>
-        <div>
-            <span>Total Portfolio Value <?php $totalValue?></span>
-        </div>
+           <div id="total-line"> <div class="totals">Total Portfolio Value $<?php echo number_format($totalValue, 2, '.'); ?></div></div>
+    </div>
     </div>
 </body>
 

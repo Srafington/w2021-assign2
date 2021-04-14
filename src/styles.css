@@ -490,6 +490,37 @@ th {
   backdrop-filter: blur(20px);
   box-shadow: 5px 5px 5px -2px var(--foregrounda);
 }
+.portfolio-head{
+  font-weight: bold !important;
+  font-size: medium;
+}
+.portfolio-row {
+  height: 5em;
+  border-style: none;
+  border-radius: 5px;
+}
+.portfolio-row:hover {
+  background-color: var(--foregrounda);
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px -2px var(--shadow);
+  transition: 0.15s;
+}
+.totals {
+  width: fit-content;
+  padding: 1em;
+  padding-left: auto;
+  text-align: end;
+  font-size: large;
+  color:white;
+  background-color: var(--foreground);
+  border-radius: 5px;
+  
+}
+
+#total-line{
+  display: flex;
+  justify-content:flex-end;
+}
 
 fieldset {
   border-radius: 5px;
