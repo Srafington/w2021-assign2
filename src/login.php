@@ -9,6 +9,10 @@ if (isset($_SESSION['user'])) {
     header("Location: /");
     exit;
 }
+if(isset($_GET['LOGOUT'])){
+    SessionManager::logout();
+}
+
 $error = '';
 //now check if page has been submitted with a user/password, then verify that combo
 if (isset($_POST['username'], $_POST['password'])) {
