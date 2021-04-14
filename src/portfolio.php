@@ -1,8 +1,7 @@
 <?php
+require_once 'config.inc.php';
 require_once 'header.inc.php';
 require_once 'index-db-classes.inc.php';
-
-$favs = SessionManager::getFavorites();
 
 if(!SessionManager::isLoggedIn()){
     header("Location: /");
@@ -12,6 +11,7 @@ $conn = DatabaseHelper::createConnection(array(
     DBCONNSTRING,
     DBUSER, DBPASS
 ));
+echo json_encode($_SESSION);
 $userID = $_SESSION['userID'];
 $gateway = new PortfolioDB($conn);
 $portfolio = $gateway->getPortfolio();
