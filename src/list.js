@@ -59,7 +59,9 @@ document.addEventListener("DOMContentLoaded", function () {
         for (let i = 0; i < li.length; i++) {
             let item = li[i];
             textValue = item.textContent;
-            if (textValue.toUpperCase().indexOf(filter) > -1) {
+            textValue = textValue.substring(textValue.indexOf(' ')+1);
+            console.log(textValue.toUpperCase().indexOf(filter))
+            if (textValue.toUpperCase().indexOf(filter) === 0) {
                 li[i].style.display = "";
             } else {
                 li[i].style.display = "none";
