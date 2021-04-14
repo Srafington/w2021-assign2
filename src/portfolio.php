@@ -36,7 +36,16 @@ $portfolio = $gateway->getPortfolio();
         <fieldset>
             <ul id="companyList">
                 <?php
-                
+                foreach ($portfolio as $symbol => $details) {
+                    echo '<form action="" method="POST">';
+                    echo "<li> <a href='/single-company.php?symbol=$symbol'>";
+                    echo '<img class="smallLogo" src="/logos/' . $symbol . '.svg" alt="' . $symbol . '">';
+                    echo '<span>' . $details['name'] . '</span>';
+                    echo '<span>' . $details['amount'] . '</span>';
+                    echo '<span>' . $details['close'] . '</span>';
+                    echo '<span>' . $details['total_value'] . '</span>';
+                    echo "</li>";
+                    echo "</form>";
                 ?>
             </ul>
         </fieldset>
