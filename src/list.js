@@ -60,7 +60,6 @@ document.addEventListener("DOMContentLoaded", function () {
             let item = li[i];
             textValue = item.textContent;
             textValue = textValue.substring(textValue.indexOf(' ')+1);
-            console.log(textValue.toUpperCase().indexOf(filter))
             if (textValue.toUpperCase().indexOf(filter) === 0) {
                 li[i].style.display = "";
             } else {
