@@ -33,7 +33,7 @@ body {
   width: 100%;
 }
 
-#Credit {
+.credit {
   font-size: 35px;
   padding: 31px 20px 20px 20px;
   margin: auto;
@@ -94,14 +94,17 @@ body {
   grid-column: 1 / span 2;
   grid-row: 1 / span 1;
   background-color: var(--foreground);
-  height: 50px;
+  height: 40px;
   padding-bottom: 50px;
   border: 0px solid var(--shadow);
-  border-radius: 5px;
+  /* border-radius: 5px; */
   box-shadow: 5px 5px 5px -2px var(--shadow);
   display: flex;
   align-items: baseline;
-
+  position: fixed;
+  top:0;
+  left: 0;
+  width: 100%;
 }
 
 #icons {
@@ -368,20 +371,28 @@ th {
   
 }
 
-.csBox {
+.prettyBox {
   border: 0px solid var(--shadow);
   border-radius: 5px;
   box-shadow: 5px 5px 5px -2px var(--shadow);
   background-color: var(--background);
-  padding: 10em 1em 1em 1em;
-  display: flex;
-  justify-content: center;
-  min-height: 600px;
+  padding: 1em 1em 1em 1em;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  
+  margin-top: 10em;
+
 }
+
+
+.csBox {
+  padding-top: 10em;
+  display: flex;
+  justify-content: center;
+  min-height: 600px;
+}
+
+
 
 #aboutBox{
   min-height: 800px;
@@ -461,12 +472,19 @@ th {
 #aboutBlock p{
   padding: .5em .5em .5em 1em;
   margin: 1em;
-  background-color: rgba(150, 150, 150, .2);
+  background-color: rgba(83, 83, 83, 0.3);
   border-style: none;
   border-radius: 1em;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(20px);
   box-shadow: 5px 5px 5px -2px var(--foregrounda);
 }
+
+fieldset{
+  border-radius: 5px;
+  border-style: hidden;
+  border-width: 5px;
+}
+
 
 @media screen and (min-width: 1100px) {
   h1 {

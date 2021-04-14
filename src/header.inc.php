@@ -3,11 +3,11 @@
         //echo '<div id="header">';
         echo '<div class="h" id="icons">
         <div>
-            <i id="Credit" class="fas fa-chart-bar"></i>
+        <a href="/" title="Home"><i class="fas fa-home credit"></i></a>
         </div>';
         echo "<h1>$pageName</h1>";
         echo '<div>
-            <i id="Credit" class="fa fa-bars"></i>
+            <i class="fa fa-bars credit"></i>
         </div>
         </div>';
         if($isRoot){
