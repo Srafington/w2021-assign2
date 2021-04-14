@@ -42,7 +42,7 @@ $totalValue = 0.0;
                         <th></th>
                         <th>Symbol</th>
                         <th>Name</th>
-                        <th>Amount</th>
+                        <th>Number of Stocks</th>
                         <th>$ Close</th>
                         <th>$ Value</th>
                     </tr>
