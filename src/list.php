@@ -3,7 +3,7 @@
 include "header.inc.php";
 
 function generateList(){ ?>
-        <div>
+        <div class="prettyBox">
                 <form class=textbox action="single-company.php" method="get">
                     <fieldset>
                         <input type="text" class="search" placeholder="Type for matching company"

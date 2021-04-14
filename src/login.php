@@ -24,9 +24,10 @@ if (isset($_POST['username'], $_POST['password'])) {
 
 function generateDisplay($error)
 { ?>
-    <main class="csBox with-backgound">
+
+    <main class="prettyBox csBox with-backgound">
         <div id="csBlock">
-            <h2> Log In</h2>
+            <h2>Log In</h2>
             <form action="<?= $_SERVER['REQUEST_URI'] ?>" method="POST">
                 <div class="login-block"><label for="username">Username: </label>
                 <input class="login-input" type="text" id="username" name="username"></div>
@@ -57,7 +58,7 @@ function generateDisplay($error)
 
 <body>
     <?php 
-    drawHeader(" ");
+    drawHeader("Stocks Browser");
     generateDisplay($error); ?>
 </body>
 

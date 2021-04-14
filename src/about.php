@@ -2,7 +2,7 @@
 require_once 'styles.php';
 
 function generateDisplay(){?>
-    <main class="csBox with-backgound" id="aboutBox">
+    <main class="prettyBox csBox with-backgound" id="aboutBox">
         <div id="aboutBlock">
             <div>
                 <h2>About The Website</h2>

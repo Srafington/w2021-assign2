@@ -3,7 +3,7 @@
 require_once 'styles.php';
 
 function generateDisplay(){?>
-    <main class="csBox with-backgound">
+    <main class="prettyBox csBox with-backgound">
         <div id="csBlock">
             <div>
                 <div id="csIcon"><i class="fas fa-pencil-ruler"></i><i class="fas fa-upload"></i><i class="fas fa-laptop-code"></i></div>
