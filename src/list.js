@@ -85,7 +85,9 @@ document.addEventListener("DOMContentLoaded", function () {
             let img = document.createElement("img");
             img.src = `/logos/${symbol}.svg`
             zoomImg.appendChild(img);
-            zoomImg.style.left = `${x}px`;
+            zoomImg.style.position = "absolute";
+            //zoomImg.style.left = `${x}px`;
+            zoomImg.style.left = "500px";
             console.log(x);
             zoomImg.style.top = `${y}px`;
         }

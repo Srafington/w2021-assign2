@@ -124,7 +124,7 @@ body {
   box-shadow: 5px 5px 5px -2px var(--shadow);
   cursor: pointer;
 }
-#buttonContainer {
+.buttonContainer {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -132,8 +132,8 @@ body {
 
 .infoButtons {
   font-size: 16px;
-  width: 130px;
-  height: 40px;
+  width: 150px;
+  height: 50px;
   margin: 40px 20px 20px 40px;
   background-color: var(--foreground);
   color: var(--background);
@@ -142,6 +142,7 @@ body {
   border-radius: 5px;
   box-shadow: 5px 5px 5px -2px var(--shadow);
 }
+
 
 .search {
   margin-left: 20px;
