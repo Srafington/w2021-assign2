@@ -1,0 +1,11 @@
+{
+    "name": "sidew/w2021-assign2",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Jonathan Axford",
+            "email": "jon.axford@outlook.com"
+        }
+    ],
+    "require": {}
+}
