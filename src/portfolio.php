@@ -8,9 +8,13 @@ if(!SessionManager::isLoggedIn()){
     header("Location: /");
     die();
 }
-
+$conn = DatabaseHelper::createConnection(array(
+    DBCONNSTRING,
+    DBUSER, DBPASS
+));
 $userID = $_SESSION['userID'];
-
+$gateway = new PortfolioDB($conn);
+$portfolio = $gateway->getPortfolio();
 
 ?>
 
