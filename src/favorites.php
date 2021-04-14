@@ -49,7 +49,7 @@ if (isset($_POST['remove-all'])) {
                         echo '<i class="fas fa-star fa-stack-2x fa-xs"></i>';
                         echo '<i id="dark" class="fas fa-minus fa-stack-1x fa-xs"></i>';
                         echo '</span>';
-                        echo "Remove</button>";
+                        echo " Remove</button>";
                         echo "</li>";
                         echo "</form>";
                     }
@@ -65,7 +65,7 @@ if (isset($_POST['remove-all'])) {
                 <span class="fa-stack fa-1x">
                     <i class="fas fa-star fa-stack-2x fa-xs"></i>
                     <i id="dark" class="fas fa-times fa-stack-1x fa-sm"></i>
-                </span>
+                </span> 
                 Remove All</button>
         </form>
     </div>
