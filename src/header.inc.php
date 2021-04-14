@@ -22,7 +22,7 @@ function drawHeader($pageName, $isRoot = false)
           <a href="/about.php">About</a>
           <a href="/list.php">Companies</a>';
     if (isset($_SESSION['user'])) {
-        echo '<a href="/coming-soon.php">Portfolio</a>
+        echo '<a href="/portfolio.php">Portfolio</a>
             <a href="/coming-soon.php">Profile</a>
             <a href="/favorites.php">Favorites</a>
             <a href="/login.php?LOGOUT">Log Out</a>';
