@@ -39,7 +39,7 @@ function displayHistory($history)
     echo "</tr>";
     foreach ($history as $key => $value) { ?>
         <tr>
-            <td><?= $value['date']; ?></td>
+            <td><?= date("Y - M - d", strtotime($value['date'])); ?></td>
             <td><?= $value['volume']; ?></td>
             <td><?= $value['open']; ?></td>
             <td><?= $value['close']; ?></td>
