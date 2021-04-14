@@ -471,10 +471,10 @@ th {
 #aboutBlock p{
   padding: .5em .5em .5em 1em;
   margin: 1em;
-  background-color: rgba(150, 150, 150, .2);
+  background-color: rgba(83, 83, 83, 0.3);
   border-style: none;
   border-radius: 1em;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(20px);
   box-shadow: 5px 5px 5px -2px var(--foregrounda);
 }
 
