@@ -47,6 +47,8 @@ the passed array of parameters (null if none)
     }
 }
 
+//Manages connections requiring access to the Companies db table
+//Maybe should have had all of these share a connection, but we're short on time
 class CompanyDB
 {
 
@@ -73,6 +75,7 @@ class CompanyDB
         return $statement->fetchAll();
     }
 }
+//Helps manage access to the portfolio table
 class PortfolioDB
 {
 
@@ -98,6 +101,7 @@ class PortfolioDB
     }
 }
 
+//You guessed it, manages access to the history table
 class HistoryDB
 {
 
@@ -141,6 +145,7 @@ class HistoryDB
     }
 }
 
+//This big helper has a mix of functions, all realting to session management. It handles logging in and out, as well as other general session features
 class SessionManager
 {
     private static $baseSQL = "SELECT id, country, firstname, lastname, email, password  FROM users";
