@@ -1,8 +1,6 @@
-<style>
-    <?php include "styles.css"; ?>
-</style>
-
 <?php
+
+include "header.inc.php";
 
 function generateButtons()
 { ?>
@@ -70,22 +68,22 @@ function generateAllButtons()
 <head>
     <meta charset="utf-8" />
     <title>Company Financials</title>
-
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 </head>
 
 <body>
 
     <main class="container">
-        <div class="box h" id="icons">
+        <?php drawHeader("Stocks Browser", true); ?>
+        <!-- <div class="box h" id="icons">
             <div>
                 <i id="Credit" class="fas fa-chart-bar"></i>
             </div>
             <div>
                 <i id="Credit" class="fa fa-bars"></i>
             </div>
-        </div>
-        <h2 class="t" id="title">Stock Browser</h2>
+        </div> -->
         <?php
         if (isset($_SESSION['user'])) {
             generateAllButtons();

@@ -1,6 +1,7 @@
 <?php
 require_once 'config.inc.php';
 require_once 'index-db-classes.inc.php';
+include "header.inc.php";
 try {
     $conn = DatabaseHelper::createConnection(array(
         DBCONNSTRING,
@@ -24,7 +25,7 @@ try {
 
 function displayHistory($history)
 {
-    echo "<h1>Company Stock Data</h1>";
+    drawHeader("Company Stock Data");
     echo "<img id='historyLogo' src='/logos/" . SessionManager::getSessionVar('symbol') . ".svg'>";
     echo "<div id='table'>";
     echo "<table id='stock'>";

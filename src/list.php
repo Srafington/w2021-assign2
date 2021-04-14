@@ -1,8 +1,9 @@
 <?php
 
+include "header.inc.php";
+
 function generateList(){ ?>
         <div>
-                <h1>List of Companies</h1>
                 <form class=textbox action="single-company.php" method="get">
                     <fieldset>
                         <input type="text" class="search" placeholder="Type for matching company"
@@ -31,7 +32,10 @@ function generateList(){ ?>
 </head>
 
 <body>
-<?php generateList(); ?>
+<?php 
+drawHeader("List of Companies");
+generateList(); 
+?>
 <script src="list.js"></script>
 <div id="zoomLogo"></div>
 </body>

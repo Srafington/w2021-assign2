@@ -1,6 +1,7 @@
 <?php
 require_once 'config.inc.php';
 require_once 'index-db-classes.inc.php';
+include "header.inc.php";
 
 
 try {
@@ -36,7 +37,6 @@ if (isset($_POST['favorite'])) {
 function displayInfo($company, $isFav)
 { ?>
     <div class="box">
-        <h1>Company Information</h1>
         <section id="info">
             <img id="logo" src="/logos/<?= $company['symbol']; ?>.svg">
             <label>Company Symbol: <span><?= $company['symbol']; ?></span></label>
@@ -85,7 +85,9 @@ function displayInfo($company, $isFav)
 </head>
 
 <body>
-    <?php displayInfo($company, $isFav) ?>
+    <?php 
+    drawHeader("Company Information");
+    displayInfo($company, $isFav) ?>
 </body>
 
 </html>

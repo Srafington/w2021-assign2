@@ -23,18 +23,12 @@ body {
   padding: 2em 1em 1em 1em;
 }
 
-.h {
-  grid-column: 1 / span 3;
-  grid-row: 1 / span 1;
-  background-color: var(--foreground);
-  padding: 0em 1em 1em 1em;
-}
 
 .container {
   display: grid;
   grid-gap: 10px;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 100px 100px 1fr 1fr 1fr;
+  grid-template-rows: 100px 30px 1fr 1fr 1fr;
   height: 100%;
   width: 100%;
 }
@@ -46,11 +40,10 @@ body {
   color: var(--background);
   text-shadow: 2px 2px 3px #555;
 }
+
 .t {
   grid-column: 1 / span 2;
   grid-row: 2 / span 1;
-  display: flex;
-  justify-content: center;
 }
 
 .a {
@@ -101,6 +94,14 @@ body {
   grid-column: 1 / span 2;
   grid-row: 1 / span 1;
   background-color: var(--foreground);
+  height: 50px;
+  padding-bottom: 50px;
+  border: 0px solid var(--shadow);
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px -2px var(--shadow);
+  display: flex;
+  align-items: baseline;
+
 }
 
 #icons {
@@ -108,16 +109,11 @@ body {
   justify-content: space-between;
 }
 
-#title {
-  font-size: 5vw;
-  vertical-align: middle;
-  margin: auto;
-}
 
 .buttonIcons {
-  font-size: 65px;
-  width: 560px;
-  height: 400px;
+  font-size: 60px;
+  width: 530px;
+  height: 350px;
   margin: auto;
   background-color: var(--foreground);
   color: var(--background);
@@ -151,6 +147,7 @@ body {
   font-size: 13px;
   padding: 18px 40px 15px 15px;
   margin-bottom: 12px;
+  margin-top: 10px;
 }
 
 #clearButton {
@@ -277,11 +274,10 @@ ul#companyList li {
 }
 
 h1 {
-  padding: 14px 14px 14px 20px;
-  background-color: var(--foreground);
   color: var(--background);
   border-radius: 5px;
   text-align: center;
+  font-size: 3vw;
 }
 
 .queryString {

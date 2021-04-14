@@ -3,6 +3,7 @@
 require_once 'index-db-classes.inc.php';
 require_once 'config.inc.php';
 require_once 'styles.php';
+include "header.inc.php";
 
 if (isset($_SESSION['user'])) {
     header("Location: /");
@@ -55,7 +56,9 @@ function generateDisplay($error)
 </head>
 
 <body>
-    <?php generateDisplay($error) ?>
+    <?php 
+    drawHeader(" ");
+    generateDisplay($error); ?>
 </body>
 
 </html>
