@@ -14,6 +14,7 @@ $conn = DatabaseHelper::createConnection(array(
 $userID = $_SESSION['userID'];
 $gateway = new PortfolioDB($conn);
 $portfolio = $gateway->getPortfolio();
+$totalValue = 0.0;
 
 ?>
 
@@ -40,15 +41,9 @@ $portfolio = $gateway->getPortfolio();
                 ?>
             </ul>
         </fieldset>
-        <form action="" method="POST">
-            <input type="hidden" name="remove-all" value="" />
-            <button class="infoButtons" type="submit" value="remove-all">
-                <span class="fa-stack fa-1x">
-                    <i class="fas fa-star fa-stack-2x fa-xs"></i>
-                    <i id="dark" class="fas fa-times fa-stack-1x fa-sm"></i>
-                </span> 
-                Remove All</button>
-        </form>
+        <div>
+            <span>Total Portfolio Value <?php $totalValue?></span>
+        </div>
     </div>
 </body>
 
