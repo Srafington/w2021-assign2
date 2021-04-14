@@ -41,7 +41,7 @@ function generateAllButtons()
         </form>
     </div>
     <div class="box c">
-        <form action="coming-soon.php" method="get">
+        <form action="portfolio.php" method="get">
             <button class="buttonIcons" type="submit" value="portfolio"><i class="fas fa-clipboard-list"></i> Portfolio</button>
         </form>
     </div>
@@ -51,7 +51,7 @@ function generateAllButtons()
         </form>
     </div>
     <div class="box e">
-        <form action="favorites.php" method="get">
+        <form action="coming-soon.php" method="get">
             <button class="buttonIcons" type="submit" value="profile"><i class="fas fa-address-card"></i> Profile</button>
         </form>
     </div>
