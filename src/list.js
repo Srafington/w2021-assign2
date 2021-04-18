@@ -1,7 +1,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    const companyData = 'http://localhost/api-companies.php'
+    const companyData = '/api-companies.php'
     const companies = [];
 
 
